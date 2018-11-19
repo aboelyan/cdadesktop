@@ -1,1 +1,32 @@
+ALTER proc [dbo].[AddAct]
+@adate date ,
+@titel varchar (100),
+@mail int ,
+@fmail int ,
+@place varchar(50),
+@id_cat int ,
+@id_proj int ,
+@id_tran int ,
+@masol varchar (50)
+as
 
+INSERT INTO [dbo].[Activites]
+           ([adate]
+           ,[titel]
+           ,[mail]
+           ,[fmail]
+           ,[place]
+           ,[id_cat]
+           ,[id_proj]
+           ,[id_tran]
+		   ,[masol])
+     VALUES
+           (@adate ,
+           @titel,
+           @mail,
+           @fmail,
+           @place,
+           @id_cat, 
+           @id_proj,
+           @id_tran,
+		   @masol)
