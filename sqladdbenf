@@ -1,0 +1,25 @@
+ALTER proc [dbo].[Addbenf]
+@bname varchar(50),
+@bid char(14),
+@badress varchar (50),
+@phone char(12),
+@email varchar (50),
+@degree varchar (50),
+@id_center int
+as
+INSERT INTO [dbo].[Benfitirse]
+           ([bname]
+           ,[bid]
+           ,[badress]
+           ,[phone]
+           ,[email]
+           ,[degree]
+           ,[id_center])
+     VALUES
+           (@bname
+           ,@bid
+           ,@badress
+           ,@phone
+           ,@email
+           ,@degree
+          ,@id_center)
