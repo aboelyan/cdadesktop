@@ -1,0 +1,11 @@
+create PROCEDURE [dbo].[GetUser_AutoComplete]
+@user_id int
+AS
+declare @txtsearch varchar(50)
+select @txtsearch = CONVERT(varchar(50), @user_id)
+IF ISNULL (@txtsearch, '') is not null
+BEGIN
+    SELECT  [Activites].fmail + ' ' + [Activites].mail + ' ' + [Activites].titel + ' ' + [Activites].masol + ' ' 
+    FROM [Activites]
+    WHERE CONVERT(varchar(50), [id_act]) LIKE @txtsearch + '%'
+END
